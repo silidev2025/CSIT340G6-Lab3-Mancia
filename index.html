@@ -2,9 +2,157 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>viteapp</title>
+    <title>CSIT340 - Course Information</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --maroon: #7a1020;
+        --gold: #e7b43c;
+        --paper: #f7f2ea;
+        --card: #ffffff;
+        --ink: #1f1a17;
+        --muted: #6d625a;
+        --line: #e6dccd;
+        --pill: #fbf0d8;
+        --pill-ink: #6b4a00;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(90, 30, 20, 0.1);
+        --sans: 'IBM Plex Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+        --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+        font-family: var(--sans);
+        color: var(--ink);
+        background: var(--paper);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #14100e;
+          --card: #201a17;
+          --ink: #f3ece4;
+          --muted: #a99d93;
+          --line: #362c26;
+          --pill: #3a2c12;
+          --pill-ink: #f2cf7d;
+          --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+      }
+
+      .page {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        padding: 48px 16px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 480px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .card-header {
+        background: var(--maroon);
+        color: #fff;
+        padding: 28px 28px 24px;
+        border-bottom: 4px solid var(--gold);
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .card-header h1 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .content {
+        padding: 6px 28px;
+      }
+
+      .part {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin: 0;
+        padding: 16px 0;
+        border-bottom: 1px dashed var(--line);
+      }
+
+      .part:last-child {
+        border-bottom: none;
+      }
+
+      .part-name {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      .part-units {
+        flex-shrink: 0;
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--pill);
+        color: var(--pill-ink);
+      }
+
+      .total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 18px 28px;
+        border-top: 1px solid var(--line);
+        font-weight: 600;
+      }
+
+      .total .part-units {
+        background: var(--maroon);
+        color: #fff;
+      }
+
+      .footer {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--muted);
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
