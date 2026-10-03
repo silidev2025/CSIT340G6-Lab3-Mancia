@@ -10,8 +10,8 @@ const Header = (props) => {
 const Part = (props) => {
   return (
     <p className="part">
-      <span className="part-name">{props.part}</span>
-      <span className="part-units">{props.units} units</span>
+      <span className="part-name">{props.part.name}</span>
+      <span className="part-units">{props.part.units} units</span>
     </p>
   )
 }
@@ -19,9 +19,9 @@ const Part = (props) => {
 const Content = (props) => {
   return (
     <div className="content">
-      <Part part={props.part1} units={props.units1} />
-      <Part part={props.part2} units={props.units2} />
-      <Part part={props.part3} units={props.units3} />
+      <Part part={props.part1} />
+      <Part part={props.part2} />
+      <Part part={props.part3} />
     </div>
   )
 }
@@ -45,12 +45,18 @@ const Footer = (props) => {
 
 const App = () => {
   const course = 'CSIT340'
-  const part1 = 'IT317'
-  const units1 = 3
-  const part2 = 'IT365 Data Analytics 1'
-  const units2 = 3
-  const part3 = 'RIZAL031 Life and Works of Rizal'
-  const units3 = 3
+  const part1 = {
+    name: 'IT317',
+    units: 3
+  }
+  const part2 = {
+    name: 'IT365 Data Analytics 1',
+    units: 3
+  }
+  const part3 = {
+    name: 'RIZAL031 Life and Works of Rizal',
+    units: 3
+  }
 
   const name = 'Francis Dave P. Mancia'
   const courseCode = 'CSIT340'
@@ -60,15 +66,8 @@ const App = () => {
     <div className="page">
       <main className="card">
         <Header course={course} />
-        <Content
-          part1={part1}
-          units1={units1}
-          part2={part2}
-          units2={units2}
-          part3={part3}
-          units3={units3}
-        />
-        <Total total={units1 + units2 + units3} />
+        <Content part1={part1} part2={part2} part3={part3} />
+        <Total total={part1.units + part2.units + part3.units} />
       </main>
       <Footer name={name} courseCode={courseCode} section={section} />
     </div>
