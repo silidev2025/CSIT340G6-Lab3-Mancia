@@ -7,21 +7,21 @@ const Header = (props) => {
   )
 }
 
+const Part = (props) => {
+  return (
+    <p className="part">
+      <span className="part-name">{props.part}</span>
+      <span className="part-units">{props.units} units</span>
+    </p>
+  )
+}
+
 const Content = (props) => {
   return (
     <div className="content">
-      <p className="part">
-        <span className="part-name">{props.part1}</span>
-        <span className="part-units">{props.units1} units</span>
-      </p>
-      <p className="part">
-        <span className="part-name">{props.part2}</span>
-        <span className="part-units">{props.units2} units</span>
-      </p>
-      <p className="part">
-        <span className="part-name">{props.part3}</span>
-        <span className="part-units">{props.units3} units</span>
-      </p>
+      <Part part={props.part1} units={props.units1} />
+      <Part part={props.part2} units={props.units2} />
+      <Part part={props.part3} units={props.units3} />
     </div>
   )
 }
